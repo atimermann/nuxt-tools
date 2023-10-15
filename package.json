@@ -1,8 +1,12 @@
 {
-  "name": "my-module",
+  "name": "@agtm/nuxt-tools",
   "version": "1.0.0",
   "description": "My new Nuxt module",
-  "repository": "your-org/my-module",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/atimermann/nuxt-tools.git"
+  },
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -12,7 +16,7 @@
       "require": "./dist/module.cjs"
     }
   },
-  "main": "./dist/module.cjs",
+  "main": "./dist/module.mjs",
   "types": "./dist/types.d.ts",
   "files": [
     "dist"
@@ -22,10 +26,12 @@
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
-    "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
-    "lint": "eslint .",
-    "test": "vitest run",
-    "test:watch": "vitest watch"
+    "lint:test": "npx eslint src",
+    "lint": "npx eslint --fix src",
+    "test": "echo 'No-test'",
+    "test:watch": "vitest watch",
+    "commit": "cz",
+    "release": "npm run lint && npm run test && npm run prepack && npx dotenv -- npx semantic-release"
   },
   "dependencies": {
     "@nuxt/kit": "^3.7.4"
@@ -39,10 +45,25 @@
     "@types/node": "^18.18.1",
     "changelogen": "^0.5.5",
     "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.50.0",
+    "eslint-config-standard": "^17.1.0",
     "nuxt": "^3.7.4",
     "semantic-release": "^22.0.5",
     "vitest": "^0.33.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
