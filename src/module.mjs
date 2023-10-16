@@ -26,7 +26,10 @@ export default defineNuxtModule({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url);
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
-    addPlugin(resolver.resolve('./runtime/plugin'));
+    addImports({
+      name: 'use', // name of the composable to be used
+      as: 'useComposable',
+      from: resolver.resolve('runtime/composables/useTools') // path of composable
+    })
   },
 });

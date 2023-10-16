@@ -14,7 +14,8 @@
       "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
-    }
+    },
+    "./tools": "./src/composables/useTools.mjs"
   },
   "main": "./dist/module.mjs",
   "types": "./dist/types.d.ts",
