@@ -15,7 +15,7 @@
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
-    "./tools": "./src/composables/useTools.mjs"
+    "./tools": "./src/runtime/composables/useTools.mjs"
   },
   "types": "./dist/types.d.ts",
   "files": [
