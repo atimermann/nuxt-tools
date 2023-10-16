@@ -22,7 +22,8 @@ export default {
 
     const envConfig = config.public[attributeName]
 
-    if (!envConfig && required) {
+    alert(`${attributeName} => ${envConfig}`)
+    if (!envConfig && envConfig !== false && required) {
     // eslint-disable-next-line no-undef
       throw showError({
         statusCode: 500,
