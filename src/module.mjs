@@ -35,9 +35,15 @@ export default defineNuxtModule({
     })
 
     addImports({
-      name: 'default', // name of the composable to be used
+      name: 'default',
       as: 'useNuxtTools',
       from: resolver.resolve('runtime/composables/useTools')
+    })
+
+    addImports({
+      name: 'default',
+      as: 'useSocketTools',
+      from: resolver.resolve('runtime/composables/useSocketTools')
     })
   }
 })

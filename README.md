@@ -39,14 +39,9 @@ Module with useful tools for Nuxt projects
 1. Add `@agtm/nuxt-tools` dependency to your project
 
 ```bash
-# Using pnpm
-pnpm add -D @agtm/nuxt-tools
-
-# Using yarn
-yarn add --dev @agtm/nuxt-tools
-
 # Using npm
 npm install --save-dev @agtm/nuxt-tools
+npm install @agtm/nuxt-tools
 ```
 
 2. Add `@agtm/nuxt-tools/module` to the `modules` section of `nuxt.config.ts`
@@ -54,7 +49,7 @@ npm install --save-dev @agtm/nuxt-tools
 ```js
 export default defineNuxtConfig({
   modules: [
-    '@agtm/nuxt-tools/module'
+    '@agtm/nuxt-tools'
   ]
 })
 ```
@@ -72,6 +67,45 @@ Exemplo de uso:
   import { useNuxtTools } from '#imports'
 
   const {getEnvConfig} = useNuxtTools
+
+</script>
+
+
+```
+
+## Guia de Uso: SocketTools
+
+### connect
+
+Conecta automaticamente no servidor socket à partir das varaiveis de ambiente:
+
+```dotenv
+NUXT_PUBLIC_SOCKET_HTTPS=true
+NUXT_PUBLIC_SOCKET_HOSTNAME=localhost
+NUXT_PUBLIC_SOCKET_PORT=3001
+```
+
+ATENÇÃO: Não esqueça de definir essas váriaveis no nuxt_config para o nuxt carrega-las:
+
+```javascript
+runtimeConfig: {
+  public: {
+    socketHttps: false,
+    socketHostname: '',
+    socketPort: ''
+  }
+}
+```
+
+Exemplo de Uso:
+```vue
+
+<script setup>
+
+  import { io } from 'socket.io-client'
+  import { useSocketTools } from '#imports'
+  
+  const socket = useSocketTools.connect(io, '/jobs')
 
 </script>
 

@@ -1,6 +1,6 @@
 {
   "name": "@agtm/nuxt-tools",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Module with useful tools for Nuxt projects",
   "private": false,
   "repository": {
@@ -22,16 +22,16 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build build",
-    "build-watch": "npx nodemon --exec \"npm run prepack\"",
+    "build-watch": "nodemon",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
     "lint:test": "npx eslint src",
-    "lint": "npx eslint --fix src",
+    "lint": "npx eslint --ext .mjs,.js,.vue --fix src",
     "test": "echo 'No-test'",
     "test:watch": "vitest watch",
-    "commit": "cz",
-    "release": "npm run lint && npm run test && npm run prepack && npx dotenv -- npx semantic-release"
+    "commit": "npm run lint && cz",
+    "release": "npm run test && npm run prepack && npx dotenv -- npx semantic-release"
   },
   "dependencies": {
     "@nuxt/kit": "^3.7.4"
