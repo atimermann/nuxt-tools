@@ -1,6 +1,6 @@
 {
   "name": "@agtm/nuxt-tools",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Module with useful tools for Nuxt projects",
   "private": false,
   "repository": {
@@ -22,7 +22,7 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build build",
-    "build-watch":  "npx nodemon --exec \"npm run prepack\"",
+    "build-watch": "npx nodemon --exec \"npm run prepack\"",
     "dev": "nuxi dev playground",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
