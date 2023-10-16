@@ -1,5 +1,5 @@
 // Import necessary functions from the Nuxt Kit module
-import { defineNuxtModule, addImports, createResolver } from '@nuxt/kit'
+import { defineNuxtModule, addImports, createResolver, installModule } from '@nuxt/kit'
 
 /**
  * Module options defined as a TypeScript interface.
@@ -23,8 +23,16 @@ export default defineNuxtModule({
    * @param {ModuleOptions} options - Module options.
    * @param {import('@nuxt/kit').NuxtKit} nuxt - NuxtKit instance.
    */
-  setup (options, nuxt) {
+  async setup (options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    await installModule('nuxt-lodash', {
+      // module configuration
+      exposeConfig: true,
+      config: {
+        prefix: '_'
+      }
+    })
 
     addImports({
       name: 'default', // name of the composable to be used

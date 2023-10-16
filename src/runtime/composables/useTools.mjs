@@ -6,8 +6,7 @@
  *
  */
 
-import { showError, useRuntimeConfig } from '#imports'
-import { snakeCase } from 'lodash'
+import { showError, useRuntimeConfig, useSnakeCase } from '#imports'
 
 export default {
   /**
@@ -27,7 +26,7 @@ export default {
     // eslint-disable-next-line no-undef
       throw showError({
         statusCode: 500,
-        statusMessage: `Environment variable "NUXT_PUBLIC_${snakeCase(attributeName).toUpperCase()}" not defined in env file.`
+        statusMessage: `Environment variable "NUXT_PUBLIC_${useSnakeCase(attributeName).toUpperCase()}" not defined in env file.`
       })
     }
 
