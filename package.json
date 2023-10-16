@@ -1,7 +1,7 @@
 {
   "name": "@agtm/nuxt-tools",
-  "version": "1.0.1",
-  "description": "My new Nuxt module",
+  "version": "1.0.2",
+  "description": "Module with useful tools for Nuxt projects",
   "private": false,
   "repository": {
     "type": "git",
@@ -10,14 +10,13 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    ".": {
+    "./module": {
       "types": "./dist/types.d.ts",
       "import": "./dist/module.mjs",
       "require": "./dist/module.cjs"
     },
     "./tools": "./src/composables/useTools.mjs"
   },
-  "main": "./dist/module.mjs",
   "types": "./dist/types.d.ts",
   "files": [
     "dist",
@@ -51,6 +50,7 @@
     "dotenv-cli": "^7.3.0",
     "eslint": "^8.50.0",
     "eslint-config-standard": "^17.1.0",
+    "nodemon": "^3.0.1",
     "nuxt": "^3.7.4",
     "semantic-release": "^22.0.5",
     "vitest": "^0.33.0"

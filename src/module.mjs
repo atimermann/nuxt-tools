@@ -1,5 +1,5 @@
 // Import necessary functions from the Nuxt Kit module
-import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit';
+import { defineNuxtModule, addImports, createResolver } from '@nuxt/kit';
 
 /**
  * Module options defined as a TypeScript interface.
@@ -13,8 +13,8 @@ import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit';
  */
 export default defineNuxtModule({
   meta: {
-    name: 'my-module',
-    configKey: 'myModule',
+    name: 'getEnvConfig',
+    configKey: 'getEnvConfig',
   },
   // Default configuration options of the Nuxt module
   defaults: {},
@@ -24,11 +24,13 @@ export default defineNuxtModule({
    * @param {import('@nuxt/kit').NuxtKit} nuxt - NuxtKit instance.
    */
   setup(options, nuxt) {
+
+    console.log('SETUP...')
     const resolver = createResolver(import.meta.url);
 
     addImports({
-      name: 'use', // name of the composable to be used
-      as: 'useComposable',
+      name: 'getEnvConfig', // name of the composable to be used
+      as: 'getEnvConfig',
       from: resolver.resolve('runtime/composables/useTools') // path of composable
     })
   },

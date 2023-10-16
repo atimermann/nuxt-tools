@@ -7,47 +7,49 @@ Find and replace all on all files (CMD+SHIFT+F):
 - Description: My new Nuxt module
 -->
 
-# My Module
-
+# @agtm/Nuxt Tools
+<!--
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
+-->
+Module with useful tools for Nuxt projects
+<!--
+[//]: # (- [✨ &nbsp;Release Notes]&#40;/CHANGELOG.md&#41;)
 
-My new Nuxt module for doing amazing things.
+[//]: # (<!-- - [🏀 Online playground]&#40;https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue&#41; -->)
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/my-module?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
-
+[//]: # (<!-- - [📖 &nbsp;Documentation]&#40;https://example.com&#41; -->)
+-->
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
+- ⛰ getEnvConfig
 - 🚠 &nbsp;Bar
 - 🌲 &nbsp;Baz
 
 ## Quick Setup
 
-1. Add `my-module` dependency to your project
+1. Add `@agtm/nuxt-tools` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D my-module
+pnpm add -D @agtm/nuxt-tools
 
 # Using yarn
-yarn add --dev my-module
+yarn add --dev @agtm/nuxt-tools
 
 # Using npm
-npm install --save-dev my-module
+npm install --save-dev @agtm/nuxt-tools
 ```
 
-2. Add `my-module` to the `modules` section of `nuxt.config.ts`
+2. Add `@agtm/nuxt-tools/module` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: [
-    'my-module'
+    '@agtm/nuxt-tools/module'
   ]
 })
 ```
