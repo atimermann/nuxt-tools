@@ -15,7 +15,6 @@ export function getEnvConfig(){
   console.log(config.public.socketHostname)
 
   // const envConfig = config.public[attributeName]
-
   // if (!envConfig && required) {
   //   // eslint-disable-next-line no-undef
   //   throw showError({
