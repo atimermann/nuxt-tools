@@ -22,14 +22,14 @@ export default {
 
     const envConfig = config.public[attributeName]
 
-    alert(`${attributeName} => ${envConfig}`)
-    if (!envConfig && envConfig !== false && required) {
-    // eslint-disable-next-line no-undef
-      throw showError({
-        statusCode: 500,
-        statusMessage: `Environment variable "NUXT_PUBLIC_${useSnakeCase(attributeName).toUpperCase()}" not defined in env file.`
-      })
-    }
+    // alert(`${attributeName} => ${envConfig}`)
+    // if (!envConfig && envConfig !== false && required) {
+    // // eslint-disable-next-line no-undef
+    //   throw showError({
+    //     statusCode: 500,
+    //     statusMessage: `Environment variable "NUXT_PUBLIC_${useSnakeCase(attributeName).toUpperCase()}" not defined in env file.`
+    //   })
+    // }
 
     return envConfig
   }

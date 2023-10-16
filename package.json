@@ -1,6 +1,6 @@
 {
   "name": "@agtm/nuxt-tools",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Module with useful tools for Nuxt projects",
   "private": false,
   "repository": {
