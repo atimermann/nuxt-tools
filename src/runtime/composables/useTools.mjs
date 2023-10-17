@@ -6,7 +6,7 @@
  *
  */
 
-import { showError, useRuntimeConfig, useSnakeCase } from '#imports'
+import { useRuntimeConfig } from '#imports'
 
 export default {
   /**
@@ -22,6 +22,7 @@ export default {
 
     const envConfig = config.public[attributeName]
 
+    // TODO: Erro mesmo quando definido, verificar se tá sendo passado false ou oq
     // alert(`${attributeName} => ${envConfig}`)
     // if (!envConfig && envConfig !== false && required) {
     // // eslint-disable-next-line no-undef
